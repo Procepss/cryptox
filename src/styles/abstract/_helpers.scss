@@ -1,0 +1,85 @@
+//===========================================
+//============= accesable ===================
+//===========================================
+
+%hidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: 0 -1px -1px 0;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+//===========================================
+//============= textShorten =================
+//===========================================
+
+@mixin textShorten($numLines: 1) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+
+	@supports (-webkit-line-clamp: $numLines) {
+		-webkit-box-orient: vertical;
+		display: box;
+		-webkit-line-clamp: $numLines;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: initial;
+	}
+}
+//===========================================
+//============= toolkit =====================
+//===========================================
+
+@mixin centering {
+	display: grid;
+	place-content: center;
+}
+
+@mixin focusRing {
+	outline: var(--grayLines) auto 2px;
+	outline-offset: 2px;
+}
+
+@mixin container {
+	margin-inline: auto;
+	max-width: var(--content-width);
+	overflow-x: hidden;
+	padding-inline: var(--space-80);
+}
+
+%container {
+	margin-inline: auto;
+	max-width: var(--content-width);
+	overflow-x: hidden;
+	padding-inline: var(--space-80);
+}
+
+//===========================================
+//============= splitContentHide =================
+//===========================================
+
+@mixin splitContentHide($translate: 100%, $delay: 0s) {
+	opacity: 0;
+	transform: translateY($translate);
+	transition: opacity 0.6s ease-out $delay, transform 0.6s ease-out $delay;
+
+	&.show {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+//===========================================
+//============= splitContentShow =================
+//===========================================
+
+@mixin splitContentShow {
+	opacity: 1;
+	transform: translateY(0);
+}

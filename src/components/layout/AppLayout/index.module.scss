@@ -1,0 +1,23 @@
+.Container {
+	// background: var(--bg);
+	color: var(--text);
+
+	display: flex;
+	flex-direction: column;
+	font-family: var(--next-font);
+	gap: var(--layout-spacing);
+	min-height: 100vh;
+	width: 100%;
+}
+
+.Container > footer {
+	margin-top: auto;
+}
+
+.Header {
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 16px;
+	z-index: 3;
+}

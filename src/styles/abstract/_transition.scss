@@ -1,0 +1,39 @@
+// Usage:   @include transition(width, height 0.3s ease-in-out);
+// Output:  -webkit-transition(width 0.2s, height 0.3s ease-in-out);
+//          transition(width 0.2s, height 0.3s ease-in-out);
+@mixin transition($transitions...) {
+	$unfoldedTransitions: ();
+	@each $transition in $transitions {
+		$unfoldedTransitions: append(
+			$unfoldedTransitions,
+			unfoldTransition($transition),
+			comma
+		);
+	}
+
+	transition: $unfoldedTransitions;
+	transition: $unfoldedTransitions;
+}
+
+@function unfoldTransition($transition) {
+	// Default values
+	$property: all;
+	$duration: 0.2s;
+	$easing: null; // Browser default is ease, which is what we want
+	$delay: null; // Browser default is 0, which is what we want
+	$defaultProperties: ($property, $duration, $easing, $delay);
+
+	// Grab transition properties if they exist
+	$unfoldedTransition: ();
+	@for $i from 1 through length($defaultProperties) {
+		$pa: null;
+		@if $i <= length($transition) {
+			$pa: nth($transition, $i);
+		} @else {
+			$pa: nth($defaultProperties, $i);
+		}
+		$unfoldedTransition: append($unfoldedTransition, $pa);
+	}
+
+	@return $unfoldedTransition;
+}

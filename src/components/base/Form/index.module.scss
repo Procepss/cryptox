@@ -1,0 +1,96 @@
+/* stylelint-disable selector-class-pattern */
+.Form {
+	width: rem(450);
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+}
+
+.Body {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+
+.Title {
+	@include fontSize56(600);
+	letter-spacing: fluid(2, 4);
+	margin-bottom: rem(48);
+	text-transform: uppercase;
+
+	@media (max-width: 767px) {
+		@include fontSize50(600);
+		margin-bottom: rem(32);
+	}
+}
+
+.Fields {
+	display: flex;
+	flex-direction: column;
+	gap: rem(25);
+	margin-bottom: rem(40);
+	width: 100%;
+
+	@media (max-width: 767px) {
+		margin-bottom: rem(32);
+	}
+}
+
+.InputWrapper {
+	position: relative;
+}
+
+.Input {
+	background-color: transparent;
+	border: 1px solid #fff;
+	border-radius: 14px;
+	color: #fff;
+	padding: rem(17) rem(23);
+	transition: border-color 0.3s ease;
+	width: 100%;
+
+	@media (max-width: 767px) {
+		line-height: 1.25;
+	}
+}
+
+.Input::placeholder {
+	color: #fff;
+	opacity: 0.5;
+}
+
+.Input:focus-visible {
+	outline: none;
+}
+
+.Input--withError {
+	border-color: #da5757;
+}
+
+.Error {
+	@include fontSize12(300);
+	left: 24px;
+	position: absolute;
+	top: calc(100% + 2px);
+}
+
+.Submit {
+	border: 2px solid transparent;
+	padding-inline: rem(28);
+	transition: all ease 0.3s;
+
+	@media (max-width: 767px) {
+		@include fontSize16(600);
+		color: $darkText;
+		justify-content: center;
+		width: 100%;
+	}
+}
+
+.Submit:hover {
+	background-color: transparent;
+	border: 2px solid #fff;
+	border-radius: 12px;
+	color: #fff;
+}

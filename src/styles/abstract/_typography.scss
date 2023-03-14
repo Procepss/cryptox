@@ -1,0 +1,271 @@
+@use 'sass:list';
+@use 'sass:math';
+@use 'sass:meta';
+@use './responsive' as *;
+@use './variables' as *;
+
+//===========================================
+//============= variables ===================
+//===========================================
+
+$breakpoint: em(700);
+
+//===========================================
+//============= mixins ======================
+//===========================================
+@mixin heading1($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 600);
+
+	color: $color;
+	font-size: fluid(36, 40);
+	font-weight: $fw;
+	line-height: 1.3;
+}
+
+@mixin heading2($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 700);
+
+	color: $color;
+	font-size: fluid(28, 32);
+	font-weight: $fw;
+	line-height: 1.3;
+}
+@mixin heading2L($args...) {
+	$fw: argsFwHandler($args, 700);
+
+	color: $light;
+	font-size: fluid(32, 26);
+	font-weight: $fw;
+	line-height: 1.3;
+}
+
+//@mixin heading3($args...) {
+//	$color: argsColorHandler($args);
+//	$fw: argsFwHandler($args, 500);
+//
+//	color: $color;
+//	font-size: $fs-23;
+//	font-weight: $fw;
+//	line-height: 1.3;
+//}
+
+@mixin text1($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 600);
+
+	color: $color;
+	font-size: fluid(20, 24);
+	font-weight: $fw;
+	line-height: 1.3;
+}
+
+//@mixin text2($args...) {
+//	$color: argsColorHandler($args);
+//	$fw: argsFwHandler($args);
+//
+//	color: $color;
+//	font-size: $fs-18;
+//	font-weight: $fw;
+//	line-height: 1.5;
+//}
+
+//===========================================
+//============= help func ===================
+//===========================================
+
+@function argsColorHandler($args) {
+	$color: $light;
+
+	@if (list.length($args) > 1) {
+		$color: list.nth($args, 1);
+	}
+
+	@if (list.length($args) == 1) {
+		$first: list.nth($args, 1);
+
+		@if (meta.type-of($first) != 'number') {
+			$color: $first;
+		}
+	}
+
+	@if (list.length($args) > 2) {
+		@error 'максимум 2 аргумента';
+	}
+
+	@return $color;
+}
+
+@function argsFwHandler($args, $initValue: 400) {
+	$fw: $initValue;
+
+	@if (list.length($args) > 1) {
+		$fw: list.nth($args, 2);
+	}
+
+	@if (list.length($args) == 1) {
+		$first: list.nth($args, 1);
+
+		@if (meta.type-of($first) == 'number') {
+			$fw: $first;
+		}
+	}
+
+	@return $fw;
+
+	@if (list.length($args) > 2) {
+		@error 'максимум 2 аргумента';
+	}
+}
+
+/** Временная реализация миксинов для шрифта **/
+@mixin fontSize11($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 400);
+
+	color: $color;
+	font-size: rem(11);
+	font-weight: $fw;
+	line-height: rem(12);
+}
+
+@mixin fontSize12($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 400);
+
+	color: $color;
+	font-size: rem(12);
+	font-weight: $fw;
+	line-height: rem(14);
+}
+
+@mixin fontSize14($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 400);
+
+	color: $color;
+	font-size: rem(14);
+	font-weight: $fw;
+	line-height: rem(17);
+}
+
+@mixin fontSize16($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 400);
+
+	color: $color;
+	font-size: rem(16);
+	font-weight: $fw;
+	line-height: rem(19);
+}
+
+@mixin fontSize18($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 400);
+
+	color: $color;
+	font-size: rem(18);
+	font-weight: $fw;
+	// line-height: rem(25);
+	line-height: rem(27);
+}
+
+@mixin fontSize20($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 400);
+
+	color: $color;
+	font-size: rem(20);
+	font-weight: $fw;
+	line-height: rem(22);
+}
+
+@mixin fontSize22($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 400);
+
+	color: $color;
+	font-size: rem(22);
+	font-weight: $fw;
+	line-height: rem(26);
+}
+
+@mixin fontSize28($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 400);
+
+	color: $color;
+	font-size: rem(28);
+	font-weight: $fw;
+	line-height: rem(36);
+}
+
+@mixin fontSize36($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 400);
+
+	color: $color;
+	font-size: rem(36);
+	font-weight: $fw;
+	line-height: rem(40);
+}
+@mixin fontSize40($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 400);
+
+	color: $color;
+	font-size: rem(40);
+	font-weight: $fw;
+	line-height: rem(48);
+}
+
+@mixin fontSize72($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 400);
+
+	color: $color;
+	font-size: rem(72);
+	font-weight: $fw;
+	line-height: rem(79);
+}
+
+@mixin fontSize56($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 400);
+
+	color: $color;
+	font-size: rem(56);
+	font-weight: $fw;
+	line-height: rem(62);
+}
+
+@mixin fontSize50($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 600);
+
+	color: $color;
+	font-size: rem(50);
+	font-weight: $fw;
+	line-height: rem(55);
+}
+
+@mixin fontSize160($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 600);
+
+	color: $color;
+	font-size: rem(160);
+	font-weight: $fw;
+	line-height: rem(160);
+}
+
+@mixin fontSize100($args...) {
+	$color: argsColorHandler($args);
+	$fw: argsFwHandler($args, 600);
+
+	color: $color;
+	font-size: rem(100);
+	font-weight: $fw;
+	line-height: rem(100);
+}

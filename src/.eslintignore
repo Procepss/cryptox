@@ -1,0 +1,13 @@
+# folders
+node_modules
+dist
+storybook-static
+.next
+public
+
+# files
+**/*.test.js
+/**/*.d.ts
+*.css
+*.svg
+package-lock.json

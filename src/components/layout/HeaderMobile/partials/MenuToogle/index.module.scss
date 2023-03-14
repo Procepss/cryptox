@@ -1,0 +1,14 @@
+.button {
+	background: transparent;
+	border-radius: 50%;
+	cursor: pointer;
+	height: 50px;
+	outline: none;
+	//border: none;
+	pointer-events: all;
+	position: absolute;
+	right: 15px;
+	top: 30px;
+	user-select: none;
+	width: 50px;
+}

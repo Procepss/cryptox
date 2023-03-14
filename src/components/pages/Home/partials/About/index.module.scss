@@ -1,0 +1,319 @@
+.Root {
+	align-items: center;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	padding-top: rem(140);
+	width: 100%;
+
+	@media (max-width: 768px) {
+		padding-top: rem(20);
+	}
+}
+
+.Container {
+	display: flex;
+	gap: rem(70);
+	justify-content: center;
+	min-width: rem(340);
+
+	@media (max-width: 1300px) {
+		gap: rem(0);
+		justify-content: space-between;
+	}
+	@media (max-width: 1024px) {
+		flex-direction: column;
+	}
+
+	@media (max-width: 450px) {
+		padding: rem(40) rem(20);
+	}
+}
+
+.Left {
+	align-items: center;
+	animation: animateVideo 0.6s ease-in-out 2.05s forwards;
+	display: flex;
+	flex-basis: 45%;
+	flex-direction: column;
+	opacity: 0;
+	transition: opacity 0.6s ease-in-out, transform 0.25s linear;
+
+	@media (max-width: 450px) {
+		flex-basis: 0;
+	}
+}
+
+.TopTags {
+	@media (max-width: 1024px) {
+		align-items: flex-end;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
+}
+
+.TagLeftTop {
+	display: inline-block;
+	font-size: fluid(16, 28);
+	letter-spacing: 2px;
+	margin-bottom: rem(20);
+
+	@media (max-width: 1024px) {
+		flex-basis: rem(300);
+		margin-bottom: 0;
+	}
+	@media (max-width: 768px) {
+		flex-basis: rem(170);
+		font-size: rem(13);
+		letter-spacing: rem(1);
+	}
+}
+
+.TagMobile {
+	display: none;
+	@media (max-width: 1024px) {
+		display: block;
+	}
+	@media (max-width: 768px) {
+		font-size: rem(13);
+		letter-spacing: rem(1);
+	}
+}
+
+.VideoBlock {
+	height: 500px;
+	margin-bottom: rem(50);
+	margin-top: rem(20);
+	overflow: hidden;
+	position: relative;
+	width: rem(500);
+
+	@media (max-width: 450px) {
+		height: rem(320);
+		margin-bottom: 0;
+		margin-top: 0;
+		width: rem(320);
+	}
+
+	@media (min-width: 450px) and (max-width: 1024px) {
+		height: rem(400);
+		margin-bottom: 0;
+		margin-top: 0;
+		width: rem(400);
+	}
+
+	@media (min-width: 1500px) {
+		height: rem(598);
+		width: rem(598);
+	}
+
+	@media (min-width: 2100px) {
+		height: rem(890);
+		width: rem(890);
+	}
+}
+
+.Video {
+	height: rem(720);
+	left: rem(-100);
+	position: absolute;
+	top: rem(-105);
+	width: rem(700);
+
+	@media (min-width: 1500px) {
+		height: rem(800);
+		left: rem(-104);
+		top: rem(-95);
+		width: rem(800);
+	}
+
+	@media (min-width: 2100px) {
+		height: rem(1100);
+		left: rem(-100);
+		top: rem(-100);
+		width: rem(1100);
+	}
+
+	@media (max-width: 1024px) {
+		height: rem(400);
+		left: 0;
+		top: 0;
+		width: rem(400);
+	}
+
+	@media (max-width: 480px) {
+		height: 100%;
+		left: 0;
+		top: 0;
+		width: 100%;
+	}
+
+	@media (max-width: 375px) {
+		height: rem(245);
+	}
+}
+
+.TitleWrapper {
+	margin-bottom: rem(24);
+	overflow: hidden;
+
+	@media (max-width: 768px) {
+		margin-bottom: rem(20);
+	}
+}
+
+.Title {
+	@include fontSize72(900);
+	@include splitContentHide(100%, 0.3s);
+	letter-spacing: fluid(2, 4);
+	text-transform: uppercase;
+
+	@media (max-width: 1300px) {
+		font-size: rem(40);
+		line-height: 1.09;
+	}
+
+	@media (max-width: 991px) {
+		font-size: rem(35);
+	}
+
+	@media (max-width: 768px) {
+		font-size: rem(40);
+		line-height: rem(44);
+	}
+	@media (min-width: 1500px) {
+		font-size: rem(72);
+		letter-spacing: 2px;
+		line-height: rem(79);
+	}
+
+	@media (min-width: 2100px) {
+		font-size: rem(128);
+		letter-spacing: 4px;
+		line-height: rem(140);
+	}
+
+	&--show {
+		@include splitContentShow();
+	}
+}
+
+.CaptionWrapper {
+	margin-bottom: rem(40);
+	overflow: hidden;
+
+	@media (max-width: 768px) {
+		margin-bottom: rem(32);
+	}
+}
+
+.Caption {
+	@include fontSize18();
+	@include splitContentHide(100%, 0.6s);
+	display: block;
+	font-size: fluid(18, 32);
+	line-height: 1.5;
+	transition-delay: 0.3s;
+
+	&.show {
+		@include splitContentShow();
+	}
+
+	@media (max-width: 768px) {
+		@include fontSize16();
+		line-height: 1.5;
+	}
+}
+
+.ButtonWrapper {
+	overflow: hidden;
+}
+
+.Button {
+	@include splitContentHide(100%, 0.9s);
+}
+
+.TagRight {
+	font-size: fluid(20, 36);
+	margin-bottom: rem(24);
+	overflow: hidden;
+
+	@media (max-width: 768px) {
+		margin-bottom: rem(12);
+	}
+}
+
+.Tag {
+	@include fontSize20();
+	@include splitContentHide();
+	display: inline-block;
+	font-size: fluid(20, 36);
+
+	@media (max-width: 768px) {
+		letter-spacing: 1px;
+	}
+}
+
+.Image {
+	margin-bottom: rem(20);
+
+	@media (max-width: 768px) {
+		height: rem(245);
+		margin-bottom: rem(56);
+		object-fit: contain;
+	}
+}
+
+.Right {
+	flex-basis: 45%;
+	padding-top: rem(80);
+
+	@media (max-width: 1024px) {
+		flex-basis: auto;
+		padding-top: rem(0);
+	}
+
+	@media (min-width: 2100px) {
+		margin: auto 0;
+		padding-top: 0;
+	}
+
+	@media (min-width: 1500px) {
+		margin: auto 0;
+		padding-top: 0;
+	}
+}
+
+.TagLeftBottom {
+	display: block;
+
+	@media (max-width: 1024px) {
+		display: none;
+	}
+
+	@media (max-width: 768px) {
+		letter-spacing: 1px;
+	}
+}
+
+.TagDesktop {
+	font-size: fluid(16, 28);
+	letter-spacing: 2px;
+
+	@media (max-width: 768px) {
+		letter-spacing: 1px;
+	}
+}
+
+@keyframes animateVideo {
+	from {
+		opacity: 0;
+		// transform: translateY(0);
+	}
+
+	to {
+		opacity: 1;
+		// transform: translateY(-44vh);
+	}
+}

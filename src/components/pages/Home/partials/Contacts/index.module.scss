@@ -1,0 +1,188 @@
+.Root {
+	height: 100vh;
+	overflow: hidden;
+	padding-bottom: rem(30);
+	padding-top: rem(140);
+	position: relative;
+	width: 100%;
+
+	@media (max-width: 768px) {
+		padding-top: rem(85);
+	}
+}
+
+.Container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: space-evenly;
+	margin-inline: auto;
+	padding-bottom: rem(30);
+}
+
+.Up {
+	display: flex;
+	justify-content: space-between;
+
+	@media (max-width: 768px) {
+		flex-direction: column;
+	}
+}
+
+.Left {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.TagRight {
+	margin-bottom: rem(24);
+	overflow: hidden;
+
+	@media (max-width: 768px) {
+		margin-bottom: rem(16);
+	}
+}
+
+.Tag {
+	@include fontSize20();
+	@include splitContentHide();
+	display: inline-block;
+	font-size: fluid(16, 36);
+	line-height: fluid(17, 38);
+}
+
+.TitleWrapper {
+	margin-bottom: rem(40);
+	overflow: hidden;
+
+	@media (max-width: 1024px) {
+		margin-bottom: rem(32);
+	}
+
+	@media (max-width: 375px) {
+		margin-bottom: rem(24);
+	}
+}
+
+.Title {
+	@include splitContentHide(100%, 0.3s);
+
+	font-size: fluid(50, 200);
+	letter-spacing: fluid(2, 4);
+	line-height: fluid(55, 200);
+	text-transform: uppercase;
+
+	@media (max-width: 1024px) {
+		@include fontSize50();
+		font-weight: 600;
+		padding-right: rem(60);
+	}
+
+	&--show {
+		@include splitContentShow();
+	}
+}
+
+.ButtonWrapper {
+	overflow: hidden;
+
+	@media (min-width: 2100px) {
+		margin-left: rem(25);
+		scale: 1.2;
+	}
+}
+
+.Button {
+	@include splitContentHide(100%, 0.6s);
+	transition-delay: 0.3s;
+
+	&.show {
+		@include splitContentShow();
+	}
+}
+
+.Right {
+	@include splitContentHide(30%, 0.9s);
+	flex-basis: 45%;
+	text-align: center;
+
+	@media (max-width: 1024px) {
+		margin-top: rem(40);
+	}
+
+	@media (max-width: 768px) {
+		padding: 0;
+	}
+}
+
+.Video {
+	display: block;
+	margin-inline: auto;
+	width: 95%;
+
+	@media (max-width: 768px) {
+		height: rem(270);
+		width: 100%;
+	}
+
+	@media (max-width: 414px) {
+		height: rem(257);
+	}
+
+	@media (max-width: 375px) {
+		height: rem(150);
+	}
+}
+
+.Bottom {
+	@include splitContentHide(30%, 1.2s);
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: rem(20);
+
+	@media (max-width: 768px) {
+		align-items: center;
+		flex-direction: column;
+		gap: rem(20);
+		padding-top: rem(40);
+	}
+}
+
+.Image {
+	height: 100%;
+	object-fit: contain;
+
+	@media (max-width: 1024px) {
+		max-width: rem(300);
+	}
+
+	@media (max-width: 375px) {
+		height: rem(140);
+		object-fit: contain;
+	}
+}
+
+.Logos {
+	display: flex;
+	gap: rem(24);
+
+	@media (max-width: 768px) {
+		order: -1;
+	}
+}
+
+.Number,
+.Email {
+	@include fontSize18();
+	font-size: fluid(16, 32);
+	line-height: fluid(19, 38);
+	transition: transform ease 0.3s;
+}
+
+.Number:hover,
+.Email:hover {
+	transform: scale(1.1);
+}

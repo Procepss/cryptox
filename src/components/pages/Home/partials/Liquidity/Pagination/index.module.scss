@@ -1,0 +1,65 @@
+.Root {
+	display: flex;
+	flex-direction: column;
+	row-gap: rem(15);
+
+	@media (max-width: 768px) {
+		column-gap: rem(15);
+		flex-direction: row;
+		justify-content: center;
+		row-gap: 0;
+	}
+}
+
+.Item {
+	border: 1px solid transparent;
+	border-radius: 50%;
+	cursor: pointer;
+	height: rem(20);
+	position: relative;
+	transition: bordr-color 0.3s ease;
+	width: rem(20);
+
+	@media (min-width: 1500px) {
+		height: rem(21);
+		width: rem(21);
+	}
+
+	@media (min-width: 2100px) {
+		height: rem(37);
+		width: rem(37);
+	}
+
+	&::before {
+		background-color: $light;
+		border-radius: 50%;
+		content: '';
+		display: block;
+		height: rem(11);
+		left: 50%;
+		opacity: 0.7;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		transition: opacity 0.3s ease;
+		width: rem(11);
+
+		@media (min-width: 1500px) {
+			height: rem(11);
+			width: rem(11);
+		}
+
+		@media (min-width: 2100px) {
+			height: rem(19);
+			width: rem(19);
+		}
+	}
+
+	&--active {
+		border-color: $light;
+	}
+
+	&--active::before {
+		opacity: 1;
+	}
+}

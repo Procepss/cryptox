@@ -1,0 +1,7 @@
+.Root {
+	padding-inline: rem(40);
+
+	@media (max-width: 768px) {
+		padding-inline: 16px;
+	}
+}

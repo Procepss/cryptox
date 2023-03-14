@@ -1,0 +1,178 @@
+/* stylelint-disable selector-class-pattern */
+.Root {
+	height: 100%;
+	overflow: auto;
+	pointer-events: none;
+	position: fixed;
+	width: 100%;
+	z-index: 3;
+}
+
+.Root--open {
+	pointer-events: all;
+}
+
+.mask {
+	background-color: #07061d;
+	bottom: 0;
+	left: 0;
+	opacity: 0.8;
+	overflow: hidden;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 4;
+}
+
+.Modal {
+	align-items: center;
+	background: linear-gradient(109.24deg, #1c5bd9 14.38%, #023cb0 80.1%), #fff;
+	border-radius: 20px;
+	display: flex;
+	height: rem(650);
+	justify-content: center;
+	left: 50%;
+	overflow: hidden;
+	position: fixed;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: rem(1050);
+	z-index: 4;
+
+	@media (max-width: 1130px) {
+		width: calc(100% - 80px);
+	}
+
+	@media (max-width: 999px) {
+		border-radius: 0;
+		bottom: 0;
+		display: block;
+		height: auto;
+		left: 0;
+		min-height: 100%;
+		position: relative;
+		top: 0;
+		transform: translate(0, 0);
+		width: 100%;
+	}
+}
+
+.Close {
+	background: none;
+	border: transparent;
+	cursor: pointer;
+	position: absolute;
+	right: 12px;
+	top: 12px;
+	z-index: 1;
+}
+
+.Container {
+	align-items: center;
+	display: flex;
+	padding: rem(30) rem(40);
+
+	@media (max-width: 999px) {
+		display: block;
+		margin-inline: auto;
+		width: min-content;
+	}
+
+	@media (max-width: 767px) {
+		padding-inline: rem(16);
+		width: auto;
+	}
+
+	&--success {
+		align-self: flex-start;
+		flex-direction: column;
+		padding-top: rem(120);
+	}
+}
+
+.Container--success .Left {
+	height: rem(840);
+	left: 50%;
+	position: absolute;
+	top: 200px;
+	transform: translateX(-50%);
+	width: rem(840);
+
+	@media (max-width: 767px) {
+		bottom: -308.5px;
+		height: rem(617);
+		top: auto;
+		width: rem(617);
+	}
+}
+
+.Container--success .Video {
+	margin-inline: auto;
+	width: 100%;
+}
+
+.Left {
+	width: rem(450);
+
+	@media (max-width: 1024px) {
+		margin-inline: auto;
+		width: rem(400);
+	}
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+}
+
+.Video {
+	display: block;
+	max-width: 100%;
+}
+
+.Image {
+	height: rem(300);
+	width: rem(250);
+
+	@media (max-width: 999px) {
+		height: 220px;
+		margin-bottom: rem(32);
+		margin-inline: auto;
+		width: min-content;
+	}
+}
+
+.Form {
+	width: rem(450);
+
+	@media (max-width: 767px) {
+		width: 100%;
+	}
+}
+
+.Success {
+	text-align: center;
+}
+
+.SuccessTitle {
+	@include fontSize72(900);
+	letter-spacing: 2px;
+	margin-bottom: rem(20);
+	text-transform: uppercase;
+
+	@media (max-width: 1024px) {
+		@media (max-width: 767px) {
+			@include fontSize50(600);
+			margin-bottom: rem(20);
+		}
+	}
+}
+
+.SuccessCaption {
+	font-size: rem(28);
+	line-height: 1.5;
+
+	@media (max-width: 767px) {
+		font-size: rem(20);
+		margin-bottom: rem(20);
+	}
+}

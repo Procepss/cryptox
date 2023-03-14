@@ -1,0 +1,107 @@
+.Root {
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.Container {
+	margin-inline: auto;
+	max-width: rem(1640);
+}
+
+.Top {
+	text-align: center;
+}
+
+.Subtitle {
+	@include fontSize20();
+	@include splitContentHide();
+	font-size: fluid(18, 36);
+	line-height: fluid(18, 36);
+	margin-bottom: rem(24);
+	text-transform: uppercase;
+
+	&--show {
+		@include splitContentShow();
+	}
+
+	@media (max-width: 768px) {
+		margin-bottom: rem(20);
+	}
+}
+
+.Title {
+	h2 {
+		@include fontSize160();
+		font-family: var(--next-font--heading);
+		font-size: fluid(70, 248);
+		letter-spacing: fluid(2, 4);
+		line-height: fluid(70, 248);
+		margin-bottom: rem(120);
+	}
+}
+
+.Bottom {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.SocialBox {
+	bottom: 18%;
+	position: absolute;
+}
+
+.GetFollow {
+	font-size: fluid(16, 32);
+	font-weight: 400;
+	line-height: 27px;
+	margin-bottom: rem(24);
+	max-width: fluid(250, 550);
+	text-align: end;
+	transform: translateY(100%);
+	transition: opacity 0.6s ease-out;
+}
+
+.Logos {
+	display: flex;
+	gap: rem(24);
+	justify-content: flex-end;
+	transform: translateY(100%);
+	transition: opacity 0.6s ease-out;
+}
+
+.Video {
+	height: 100%;
+	left: 0;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.Preloader {
+	animation: preloader 1s ease-in-out forwards;
+	background: linear-gradient(0deg, #063595, #063595);
+	height: 100%;
+	left: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 3;
+}
+
+@keyframes preloader {
+	from {
+		transform: translateY(0);
+	}
+
+	to {
+		transform: translateY(100%);
+	}
+}

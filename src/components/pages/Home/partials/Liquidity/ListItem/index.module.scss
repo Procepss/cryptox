@@ -1,0 +1,41 @@
+.Root {
+	display: flex;
+	justify-content: space-between;
+}
+
+.Label {
+	@include fontSize18();
+
+	@media (max-width: 768px) {
+		@include fontSize16();
+	}
+
+	@media (min-width: 1500px) {
+		font-size: rem(18);
+		line-height: rem(25);
+	}
+
+	@media (min-width: 2100px) {
+		font-size: rem(32);
+		line-height: rem(44);
+	}
+}
+
+.ValueWrapper {
+	@include fontSize20();
+	font-weight: 600;
+
+	@media (max-width: 768px) {
+		@include fontSize18();
+		font-weight: 600;
+	}
+	@media (min-width: 1500px) {
+		font-size: rem(20);
+		line-height: rem(28);
+	}
+
+	@media (min-width: 2100px) {
+		font-size: rem(36);
+		line-height: rem(50);
+	}
+}

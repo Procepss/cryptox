@@ -1,0 +1,75 @@
+/* stylelint-disable scss/selector-no-redundant-nesting-selector */
+/* stylelint-disable max-nesting-depth */
+.Root {
+	@include fontSize18($darkText, 600);
+
+	align-items: center;
+	background-color: $light;
+	border-radius: 12px;
+	cursor: pointer;
+	display: inline-flex;
+	line-height: 20px;
+	outline: none;
+	text-transform: uppercase;
+	@media (max-width: 420px) {
+		@include fontSize14($darkText, 600);
+	}
+
+	&.withArrow {
+		border-radius: 16px;
+
+		&:hover {
+			.Icon {
+				transform: rotate(-45deg);
+			}
+		}
+
+		& .Content {
+			border-right: 1px solid rgba($darkText, 0.2);
+			padding-block: rem(24);
+
+			@media (min-width: 1500px) {
+				border-radius: 14px 0 0 14px;
+				font-size: rem(16);
+				line-height: rem(19);
+				padding: rem(24) rem(32);
+			}
+
+			@media (min-width: 2100px) {
+				border-radius: 25px 0 0 25px;
+				font-size: rem(28);
+				font-weight: 700;
+				padding: rem(30) rem(32);
+			}
+		}
+	}
+}
+
+.Content {
+	color: inherit;
+	display: inline-block;
+	padding-block: rem(16);
+	padding-inline: rem(32);
+
+	@media (min-width: 1500px) {
+		border-radius: 14px;
+		font-size: rem(16);
+		line-height: rem(19);
+		padding: rem(16) rem(32);
+	}
+
+	@media (min-width: 2100px) {
+		border-radius: 25px;
+		font-size: rem(28);
+		font-weight: 700;
+		padding: rem(28) rem(57);
+	}
+}
+
+.Icon {
+	color: inherit;
+	height: rem(16);
+	margin-inline: rem(24);
+	transition: transform ease 0.3s;
+	width: rem(16);
+}

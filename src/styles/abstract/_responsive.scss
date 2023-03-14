@@ -1,0 +1,79 @@
+@use 'sass:math';
+@use './utils' as *;
+
+//===========================================
+//============= Media =======================
+//===========================================
+
+@mixin respondAbove($breakpoint) {
+	@media only screen and (min-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin respondBelow($breakpoint) {
+	@media only screen and (max-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin respondBetween($lower, $upper) {
+	@media (min-width: $lower) and (max-width: $upper) {
+		@content;
+	}
+}
+
+//===========================================
+//============= fluid =======================
+//===========================================
+
+@function fluid(
+	$minSize,
+	$maxSize,
+	$units: 'vw',
+	$minWidth: 350,
+	$maxWidth: 2560
+) {
+	// convert to rem
+	$minSize: math.div($minSize, 16);
+	$maxSize: math.div($maxSize, 16);
+	$maxWidth: math.div($maxWidth, 16);
+	$minWidth: math.div($minWidth, 16);
+	// do calculations
+	$slope: math.div(($maxSize - $minSize), ($maxWidth - $minWidth));
+	$yAxisIntersection: -$minWidth * $slope + $minSize;
+	$preferredValue: '#{decimalRound($yAxisIntersection,3)}rem + #{decimalRound(($slope*100),3) }#{$units}';
+	// output as rem
+	$minSize: decimalRound($minSize, 3) * 1rem;
+	$maxSize: decimalRound($maxSize, 3) * 1rem;
+	@return clamp(#{$minSize}, #{$preferredValue}, #{$maxSize});
+}
+
+//===========================================
+//============= rem em ======================
+//===========================================
+
+@function rem($size) {
+	$remValue: math.div($size, 16);
+	$roundedValue: decimalRound($remValue, 3) * 1rem;
+
+	@return $roundedValue;
+}
+
+@function em($size) {
+	$remValue: math.div($size, 16);
+	$roundedValue: decimalRound($remValue, 3) * 1em;
+
+	@return $roundedValue;
+}
+
+//===========================================
+//============= relative ====================
+//===========================================
+
+@function relative($size, $width: 1440) {
+	$relativeValue: math.div($size, $width);
+	$roundedValue: decimalRound($relativeValue * 100, 3);
+
+	@return $roundedValue;
+}

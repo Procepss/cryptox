@@ -1,0 +1,31 @@
+.linkLogo > svg {
+	circle {
+		transition: fill ease 0.2s;
+	}
+
+	path {
+		transition: fill ease 0.2s;
+	}
+}
+
+.linkLogo > svg:hover {
+	cursor: pointer;
+
+	circle {
+		fill: $darkText;
+	}
+
+	path {
+		fill: $light;
+	}
+}
+
+.svg {
+	height: rem(48);
+	width: rem(48);
+
+	@media (min-width: 2100px) {
+		height: rem(85);
+		width: rem(85);
+	}
+}

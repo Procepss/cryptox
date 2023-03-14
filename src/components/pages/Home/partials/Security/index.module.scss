@@ -1,0 +1,139 @@
+.Root {
+	align-items: center;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	width: 100%;
+}
+
+.Container {
+	display: flex;
+	gap: rem(70);
+	justify-content: center;
+	margin-inline: auto;
+
+	@media (max-width: 768px) {
+		display: block;
+		gap: 0;
+	}
+}
+
+.TitleWrapper {
+	margin-bottom: rem(24);
+	overflow: hidden;
+
+	@media (max-width: 768px) {
+		margin-bottom: rem(20);
+	}
+}
+
+.Title {
+	@include fontSize72(900);
+	@include splitContentHide(100%, 0.6s);
+	font-size: fluid(50, 128);
+	letter-spacing: fluid(2, 4);
+	line-height: fluid(55, 140);
+	text-transform: uppercase;
+
+	&--show {
+		@include splitContentShow();
+	}
+
+	@media (max-width: 768px) {
+		@include fontSize50();
+		font-weight: 600;
+	}
+}
+
+.CaptionWrapper {
+	margin-bottom: rem(40);
+	overflow: hidden;
+
+	@media (max-width: 768px) {
+		margin-bottom: 0;
+	}
+}
+
+.Caption {
+	@include fontSize18();
+	@include splitContentHide(100%, 0.9s);
+	display: block;
+	font-size: fluid(16, 32);
+	line-height: fluid(24, 48);
+	max-width: 65ch;
+	@media (max-width: 768px) {
+		@include fontSize16();
+		line-height: 1.5;
+	}
+
+	&.show {
+		@include splitContentShow();
+	}
+}
+
+.TagRight {
+	margin-bottom: rem(24);
+	overflow: hidden;
+
+	@media (max-width: 768px) {
+		margin-bottom: rem(16);
+	}
+}
+
+.Tag {
+	@include fontSize20();
+
+	@include splitContentHide(100%, 0.3s);
+	display: inline-block;
+	font-size: fluid(16, 36);
+	line-height: fluid(17, 38);
+
+	@media (max-width: 768px) {
+		// @include fontSize16();
+	}
+}
+
+.TagLeftTop {
+	display: inline-block;
+	margin-bottom: rem(20);
+}
+
+.Image {
+	margin-bottom: rem(20);
+	object-fit: contain;
+
+	@media (max-width: 768px) {
+		height: rem(300);
+		margin-bottom: rem(64);
+	}
+}
+
+.Left {
+	@include splitContentHide(30%);
+	flex-basis: 45%;
+	text-align: center;
+}
+
+.Video {
+	display: block;
+	margin-inline: auto;
+	max-width: 100%;
+
+	@media (max-width: 768px) {
+		height: auto;
+		width: 100%;
+	}
+}
+
+.Right {
+	align-items: center;
+	align-items: flex-start;
+	display: flex;
+	flex-basis: 45%;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.TagLeftBottom {
+	transition: transform 0.3s ease, opacity 0.3s linear;
+}

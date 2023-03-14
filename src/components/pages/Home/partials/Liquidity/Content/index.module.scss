@@ -1,0 +1,220 @@
+@keyframes slidein-0 {
+	from {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+@keyframes slidein-1 {
+	from {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+@keyframes slidein-2 {
+	from {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+@keyframes slidein-3 {
+	from {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+@keyframes slidein-4 {
+	from {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+@keyframes slidein-5 {
+	from {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+@keyframes slidein-6 {
+	from {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+@keyframes slidein-7 {
+	from {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+
+.Root {
+	padding: 0;
+	width: 100%;
+}
+
+.Container {
+	display: flex;
+}
+
+.Header {
+	border-bottom: 2px solid rgba($light, 0.2);
+	margin-bottom: rem(20);
+	padding-bottom: rem(20);
+
+	@media (max-width: 375px) {
+		margin-bottom: rem(16);
+		padding-bottom: rem(16);
+	}
+}
+
+.TitleWrapper {
+	overflow: hidden;
+}
+
+.Title {
+	@include fontSize40(600);
+
+	font-family: var(--next-font);
+	letter-spacing: fluid(2, 4);
+	text-transform: uppercase;
+
+	@media (max-width: 768px) {
+		@include fontSize28();
+		font-weight: 600;
+	}
+
+	@media (max-width: 375px) {
+		@include fontSize20(600);
+	}
+
+	@media (min-width: 1500px) {
+		font-size: rem(40);
+		line-height: rem(48);
+	}
+
+	@media (min-width: 2100px) {
+		font-size: rem(70);
+		line-height: rem(84);
+	}
+}
+
+.man0 {
+	animation-direction: alternate;
+	animation-duration: 0.6s;
+	animation-name: slidein-0;
+}
+
+.man1 {
+	animation-direction: alternate;
+	animation-duration: 0.6s;
+	animation-name: slidein-1;
+}
+
+.man2 {
+	animation-direction: alternate;
+	animation-duration: 0.6s;
+	animation-name: slidein-2;
+}
+
+.man3 {
+	animation-direction: alternate;
+	animation-duration: 0.6s;
+	animation-name: slidein-3;
+}
+
+.man4 {
+	animation-direction: alternate;
+	animation-duration: 0.6s;
+	animation-name: slidein-4;
+}
+
+.man5 {
+	animation-direction: alternate;
+	animation-duration: 0.6s;
+	animation-name: slidein-5;
+}
+
+.man6 {
+	animation-direction: alternate;
+	animation-duration: 0.6s;
+	animation-name: slidein-6;
+}
+
+.man7 {
+	animation-direction: alternate;
+	animation-duration: 0.6s;
+	animation-name: slidein-7;
+}
+
+.Items {
+	display: flex;
+	flex-direction: column;
+	row-gap: rem(20);
+
+	@media (max-width: 768px) {
+		row-gap: rem(12);
+	}
+}
+
+.Item {
+	display: flex;
+	justify-content: space-between;
+}
+
+.ItemLabel {
+	@include fontSize18();
+
+	@media (max-width: 768px) {
+		@include fontSize16();
+	}
+}
+
+.ItemValue {
+	@include fontSize20();
+	font-weight: 600;
+
+	@media (max-width: 768px) {
+		@include fontSize18();
+		font-weight: 600;
+	}
+}

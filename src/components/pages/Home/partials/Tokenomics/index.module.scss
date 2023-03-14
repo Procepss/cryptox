@@ -1,0 +1,114 @@
+.Root {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: rem(100);
+	height: 100vh;
+	justify-content: center;
+	overflow: hidden;
+	padding-inline: rem(40);
+	width: 100vw;
+
+	@media (max-width: 768px) {
+		padding-inline: 0;
+	}
+}
+
+.heading {
+	@include fontSize56(600);
+	font-size: fluid(64, 220);
+	letter-spacing: fluid(2, 4);
+	line-height: fluid(64, 220);
+	margin-bottom: rem(100);
+	text-align: center;
+	text-transform: uppercase;
+
+	@media (max-width: 768px) {
+		line-height: 1;
+		margin-bottom: rem(16);
+		text-align: left;
+	}
+}
+
+.Container {
+	margin-inline: auto;
+	max-width: rem(1640);
+	position: relative;
+}
+
+.description {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+.descriptionText {
+	max-width: rem(560);
+
+	@media (min-width: 1500px) {
+		font-size: rem(18);
+		max-width: rem(600);
+	}
+	@media (min-width: 2100px) {
+		font-size: rem(32);
+		max-width: rem(855);
+	}
+}
+
+.BigGittar,
+.RegGittar,
+.LeftGittar {
+	position: absolute;
+}
+
+.BigImage {
+	@media (max-width: 768px) {
+		height: rem(300);
+		width: rem(300);
+	}
+
+	@media (min-width: 1500px) {
+		height: rem(500);
+		width: rem(500);
+	}
+
+	@media (min-width: 2100px) {
+		height: rem(600);
+		width: rem(600);
+	}
+}
+
+.RegImage {
+	@media (max-width: 768px) {
+		height: rem(250);
+		width: rem(250);
+	}
+
+	@media (min-width: 1500px) {
+		height: rem(500);
+		width: rem(500);
+	}
+
+	@media (min-width: 2100px) {
+		height: rem(600);
+		width: rem(600);
+	}
+}
+
+.LeftImage {
+	@media (max-width: 768px) {
+		height: rem(200);
+		transform: rotate(-30deg);
+		width: rem(200);
+	}
+
+	@media (min-width: 1500px) {
+		height: rem(500);
+		width: rem(500);
+	}
+
+	@media (min-width: 2100px) {
+		height: rem(600);
+		width: rem(600);
+	}
+}

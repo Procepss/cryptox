@@ -1,0 +1,8 @@
+.Region {
+	padding-block: 1rem;
+	scroll-snap-align: center;
+}
+
+.container {
+	@include container;
+}

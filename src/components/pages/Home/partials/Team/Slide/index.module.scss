@@ -1,0 +1,103 @@
+.Root {
+	cursor: pointer;
+	display: inline-block;
+	height: 90%;
+	width: 100%;
+}
+
+.ImageWrapper {
+	border-radius: rem(20);
+	display: inline-block;
+	height: 100%;
+	isolation: isolate;
+	margin-bottom: rem(24);
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+
+	@media (max-width: 1366px) {
+		margin-bottom: rem(20);
+	}
+
+	@media (max-width: 768px) {
+		margin-bottom: rem(16);
+	}
+}
+
+.Image {
+	border-radius: rem(20);
+	isolation: isolate;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+	width: 100%;
+	will-change: transform;
+
+	@media (min-width: 1500px) {
+		height: rem(470);
+		width: 100%;
+	}
+
+	@media (max-width: 1440px) {
+		height: rem(360);
+	}
+
+	@media (max-width: 1366px) {
+		height: auto;
+		width: 100%;
+	}
+
+	@media (max-width: 768px) {
+		height: rem(308);
+		width: rem(220);
+	}
+}
+
+.Bottom {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.Name {
+	@include fontSize22();
+	line-height: 1.36;
+
+	@media (max-width: 1366px) {
+		@include fontSize18();
+		line-height: 1.38;
+	}
+}
+
+.Socials {
+	column-gap: rem(12);
+	display: flex;
+}
+
+.Icon {
+	display: block;
+
+	circle,
+	path {
+		transition: fill 0.3s ease;
+	}
+}
+
+.Root:hover .Image {
+	@media (min-width: 1200px) {
+		transform: scale(1.05);
+	}
+}
+
+.Link:hover .Icon {
+	circle {
+		@media (min-width: 1200px) {
+			fill: $darkText;
+		}
+	}
+
+	path {
+		@media (min-width: 1200px) {
+			fill: $light;
+		}
+	}
+}
