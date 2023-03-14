@@ -1,0 +1,212 @@
+{
+	//===========================================
+	//============= Editor ======================
+	//===========================================
+	"editor.wordSeparators": "`~!@#$%^&*()_-=+[{]}\\|;:'\",.<>/?",
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.linkedEditing": false, // better Auto Rename Tag ext
+	"editor.wordWrap": "wordWrapColumn",
+	"editor.wordWrapColumn": 100,
+	//===========================================
+	//============= Default Linters =============
+	//===========================================
+	"editor.formatOnSave": true,
+	"editor.formatOnSaveMode": "file",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.stylelint": true,
+		"source.fixAll.eslint": true
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		}
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		}
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		}
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.codeActionsOnSave": {
+			"source.fixAll.stylelint": true
+		}
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+		"files.trimTrailingWhitespace": false,
+		"editor.renderWhitespace": "all",
+		"editor.acceptSuggestionOnEnter": "off",
+		"editor.parameterHints.enabled": false,
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		},
+		"editor.snippetSuggestions": "none"
+	},
+	//===========================================
+	//============= Linters =====================
+	//===========================================
+	"prettier.configPath": "./src/.prettierrc.cjs",
+	"eslint.workingDirectories": ["./src"],
+	"eslint.alwaysShowStatus": true,
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact"
+	],
+	"css.validate": false,
+	"scss.validate": false,
+	"stylelint.enable": true,
+	"stylelint.validate": ["css", "scss"],
+	"stylelint.packageManager": "pnpm",
+	"eslint.packageManager": "pnpm",
+	"prettier.requireConfig": true,
+	//===========================================
+	//============= Other =======================
+	//===========================================
+	"npm.packageManager": "pnpm",
+	//===========================================
+	//============= TS ==========================
+	//===========================================
+	"typescript.tsdk": "node_modules\\.pnpm\\typescript@4.9.4\\node_modules\\typescript\\lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"typescript.surveys.enabled": false,
+	//===========================================
+	//============= Files =======================
+	//===========================================
+	"files.autoSave": "onFocusChange",
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	"search.exclude": {
+		"**/._.DS_Store": true,
+		"**/package-lock.json": true,
+		"**/node_modules": true,
+		"**/.gitlab-ci.yml": true,
+		"**/docker": true,
+		"**/.storybook": true,
+		"**/.next": true,
+		"**/*.log": true,
+		"**/*.log*": true,
+		"**/bower_components": true,
+		"**/dist": true,
+		"**/elehukouben": true,
+		"**/.git": true,
+		"**/.gitignore": true,
+		"**/.svn": true,
+		"**/.DS_Store": true,
+		"**/.idea": true,
+		"**/.vscode": false,
+		"**/yarn.lock": true,
+		"**/tmp": true,
+		"out": true,
+		"dist": true,
+		"CHANGELOG.md": true,
+		"examples": true,
+		"res": true,
+		"screenshots": true,
+		"yarn-error.log": true,
+		"**/pnpm-lock.yaml": true,
+		"**/.yarn": true,
+		"**/.tsconfig.json": true
+	},
+	"files.exclude": {
+		"**/.cache": true,
+		"**/.editorconfig": true,
+		"**/.eslintcache": true,
+		"**/bower_components": true,
+		"**/.idea": true,
+		"**/tmp": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/._.DS_Store": true,
+		"**/node_modules": true,
+		"**/.next": true,
+		"**/.git": true
+	},
+	"files.watcherExclude": {
+		"**/.git/objects/**": true,
+		"**/.git/subtree-cache/**": true,
+		"**/.vscode/**": true,
+		"**/node_modules/**": true,
+		"**/tmp/**": true,
+		"**/bower_components/**": true,
+		"**/dist/**": true,
+		"**/yarn.lock": true
+	},
+	//===========================================
+	//============= cSpell ======================
+	//===========================================
+	"cSpell.enabledLanguageIds": ["markdown", "plaintext", "text", "yml"],
+	"cSpell.language": "en,ru",
+	"cSpell.enableFiletypes": [
+		"jsonc",
+		"typescript",
+		"typescriptreact",
+		"json",
+		"javascript"
+	],
+	"cSpell.words": [
+		"vben",
+		"windi",
+		"browserslist",
+		"tailwindcss",
+		"esnext",
+		"antv",
+		"tinymce",
+		"qrcode",
+		"sider",
+		"pinia",
+		"sider",
+		"nprogress",
+		"EDITMSG",
+		"INTLIFY",
+		"stylelint",
+		"esno",
+		"vitejs",
+		"sortablejs",
+		"mockjs",
+		"codemirror",
+		"iconify",
+		"commitlint",
+		"vditor",
+		"echarts",
+		"cropperjs",
+		"logicflow",
+		"wemake",
+		"vueuse",
+		"zxcvbn",
+		"lintstagedrc",
+		"brotli",
+		"tailwindcss",
+		"sider",
+		"tanstack",
+		"nextjs",
+		"preinstall",
+		"trivago",
+		"svgr",
+		"abouts",
+		"hookform"
+	]
+}
